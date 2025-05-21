@@ -1,13 +1,32 @@
 import type { Metadata } from 'next'
-import { Inter, Outfit } from 'next/font/google'
+import { Outfit } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
+const outfit = Outfit({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Creative Showcase',
-  description: 'A stunning portfolio showcasing creative work and projects',
+  title: 'Jean-François Léon | Software Developer',
+  description: 'Creative portfolio showcasing full-stack development projects including AIOOM, Cegex Management Software, and Geograph.',
+  openGraph: {
+    title: 'Jean-François Léon | Software Developer',
+    description: 'Creative portfolio showcasing full-stack development projects including AIOOM, Cegex Management Software, and Geograph.',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/portfolio-profile-pic.png',
+        width: 1200,
+        height: 630,
+        alt: 'Jean-François Léon - Software Developer Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jean-François Léon | Software Developer',
+    description: 'Creative portfolio showcasing full-stack development projects including AIOOM, Cegex Management Software, and Geograph.',
+    images: ['/portfolio-profile-pic.png'],
+  },
 }
 
 export default function RootLayout({
@@ -17,9 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable} font-sans bg-black text-white`}>
-        {children}
-      </body>
+      <body className={outfit.className}>{children}</body>
     </html>
   )
 }
