@@ -6,26 +6,18 @@ const outfit = Outfit({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Jean-François Léon | Software Developer',
-  description: 'Creative portfolio showcasing full-stack development projects including AIOOM, Cegex Management Software, and Geograph.',
+  description: 'Full-stack developer specializing in Next.js, React, and TypeScript. Explore projects including AIOOM, Cegex Management Software, and Geograph.',
   openGraph: {
     title: 'Jean-François Léon | Software Developer',
-    description: 'Creative portfolio showcasing full-stack development projects including AIOOM, Cegex Management Software, and Geograph.',
+    description: 'Full-stack developer specializing in Next.js, React, and TypeScript. Explore projects including AIOOM, Cegex Management Software, and Geograph.',
     type: 'website',
     locale: 'en_US',
-    images: [
-      {
-        url: '/portfolio-profile-pic.png',
-        width: 1200,
-        height: 630,
-        alt: 'Jean-François Léon - Software Developer Portfolio',
-      },
-    ],
+    siteName: 'Portfolio',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Jean-François Léon | Software Developer',
-    description: 'Creative portfolio showcasing full-stack development projects including AIOOM, Cegex Management Software, and Geograph.',
-    images: ['/portfolio-profile-pic.png'],
+    description: 'Full-stack developer specializing in Next.js, React, and TypeScript. Explore projects including AIOOM, Cegex Management Software, and Geograph.',
   },
 }
 
