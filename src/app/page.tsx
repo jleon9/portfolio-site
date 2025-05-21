@@ -10,180 +10,132 @@ import fullStackRealEstateURL from "../../videos/cegex-full-stack.mov?thumbnailT
 // @ts-expect-error: Mux embedded video imports
 import postgisSaasDemoURL from "../../videos/postgis-saas.mp4?thumbnailTime=74";
 
-const cardsContent = {
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface ProjectDescription {
+  title: string;
+  intro: string;
+  features: Feature[];
+  conclusion: string;
+  links?: {
+    text: string;
+    url: string;
+  }[];
+}
+
+const cardsContent: Record<string, ProjectDescription> = {
   spotifyPlaylistGenerator: {
     title: "Curait: a Spotify Playlist Generator",
-    description:
-      "As a frontend engineer, I built the Curait Spotify Playlist Generator: " +
-      "a sleek web app that crafts embedded Spotify playlists in seconds. " +
-      "Users simply pick a mood (Sleep, Chill, Energetic, Hardstyle), " +
-      "a genre (Afrobeat, Jazz, Rock, Hip-Hop, etc.), " +
-      "and a country (Brazil, UK, India, etc.). " +
-      "This project showcases the delivery of intuitive, " +
-      "API-driven experiences with a focus on simplicity and user delight. ",
-  },
-
-  aioomMarketing: {
-    title: "AIOOM: an All-In-One Online Marketing Solution",
-    description: `
-      <div class="space-y-6">
-        <p class="mb-4">
-          I have conceptualized <strong>AIOOM</strong>, a multi-platform social media digital marketing SaaS designed to revolutionize how businesses manage their online presence. This idea is currently in its early design phase with a <strong>Figma prototype</strong> covering the home, posts, and metrics pages. The product aims to address core challenges in modern digital marketing.
-        </p>
-
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold mb-2">Key Features:</h3>
-          
-          <div class="space-y-3">
-            <div class="flex items-start" key="content-creation">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Seamless Content Creation & Editing</strong>
-                <p class="mt-1">
-                  Craft and refine engaging content across <strong>YouTube, Facebook, Instagram, TikTok, LinkedIn, Twitter, and Pinterest</strong> from one intuitive interface.
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start" key="communication">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Integrated Communication</strong>
-                <p class="mt-1">
-                  Centralize your social conversations, fostering real-time engagement and community building.
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start" key="metrics">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Actionable Metrics</strong>
-                <p class="mt-1">
-                  Gain comprehensive insights into your performance with unified analytics across all supported platforms.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="mt-6">
-          AIOOM represents my vision for a streamlined, powerful solution which translates complex market needs into a user-centric product concept and foundational design. The product's <a href="https://example.com/landing" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-colors">landing page</a> built with Next.js and the <a href="https://figma.com/example3" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-colors">Figma design</a> are available.
-        </p>
-      </div>
-    `,
+    intro:
+      "As a frontend engineer, I built the Curait Spotify Playlist Generator: a sleek web app that crafts embedded Spotify playlists in seconds.",
+    features: [
+      {
+        title: "User-Friendly Interface",
+        description:
+          "Users simply pick a mood (Sleep, Chill, Energetic, Hardstyle), a genre (Afrobeat, Jazz, Rock, Hip-Hop, etc.), and a country (Brazil, UK, India, etc.).",
+      },
+    ],
+    conclusion:
+      "This project showcases the delivery of intuitive, API-driven experiences with a focus on simplicity and user delight.",
   },
 
   agencyManagementMVP: {
     title: "Cegex Management Software: Real Estate Management MVP",
-    description: `
-      <div class="space-y-6">
-        <p class="mb-4">
-          As a full-stack engineer, I built the <strong>Cegex Management Software</strong>, a robust MVP real estate agency management platform. Built with <strong>Next.js</strong>, <strong>NestJS</strong>, Zenstack and <strong>PostgreSQL</strong>, this software product streamlines core operations for real estate professionals.
-        </p>
+    intro:
+      "As a full-stack engineer, I built the Cegex Management Software, a robust MVP real estate agency management platform. Built with Next.js, NestJS, Zenstack and PostgreSQL, this software product streamlines core operations for real estate professionals.",
+    features: [
+      {
+        title: "Intuitive Menu",
+        description:
+          "Securely log in to access a clear menu with dedicated sections for Landlords, Tenants, Properties, and Leases (leases section is in construction).",
+      },
+      {
+        title: "Comprehensive Contact Management",
+        description:
+          "Efficiently manage Landlords and Tenants with paginated lists, searchable by ID, name, type, and phone. Easily create new entries or edit existing profiles, including detailed personal/company information, addresses, banking details, and document uploads. For landlords and tenants, seamlessly add multiple members.",
+      },
+      {
+        title: "Property Portfolio Management",
+        description:
+          "Track properties with similar detail and editing capabilities. For vacant properties, assign tenants directly from the property profile.",
+      },
+      {
+        title: "Streamlined Data Control",
+        description:
+          "Enjoy bulk deletion functionality across all lists (Landlords, Tenants, Properties) for efficient data management.",
+      },
+    ],
+    conclusion:
+      "The Cegex Management Software illustrates my experience building full-stack, scalable SaaS applications with a focus on user experience, data integrity, and modular architecture. While the software is private, the Figma design is available.",
+    links: [
+      {
+        text: "Figma design",
+        url: "https://www.figma.com/proto/Rdlvu85G8zRFAews57aDNd/CEGEX_DESIGN?node-id=1-2&starting-point-node-id=1%3A2",
+      },
+    ],
+  },
 
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold mb-2">Key Features:</h3>
-          
-          <div class="space-y-3">
-            <div class="flex items-start" key="menu">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Intuitive Menu</strong>
-                <p class="mt-1">
-                  Securely log in to access a clear menu with dedicated sections for Landlords, Tenants, Properties, and Leases (leases section is in construction).
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start" key="contact-management">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Comprehensive Contact Management</strong>
-                <p class="mt-1">
-                  Efficiently manage Landlords and Tenants with paginated lists, searchable by ID, name, type, and phone. Easily create new entries or edit existing profiles, including detailed personal/company information, addresses, banking details, and document uploads. For landlords, seamlessly add multiple members.
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start" key="property-management">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Property Portfolio Management</strong>
-                <p class="mt-1">
-                  Track properties with similar detail and editing capabilities. For vacant properties, assign tenants directly from the property profile.
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start" key="data-control">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Streamlined Data Control</strong>
-                <p class="mt-1">
-                  Enjoy bulk deletion functionality across all lists (Landlords, Tenants, Properties) for efficient data management.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="mt-6">
-          The Cegex Management Software illustrates my experience building full-stack, scalable SaaS applications with a focus on user experience, data integrity, and modular architecture. The software is private although the <a href="https://www.figma.com/proto/Rdlvu85G8zRFAews57aDNd/CEGEX_DESIGN?node-id=1-2&starting-point-node-id=1%3A2" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-colors">Figma design</a> is available.
-        </p>
-      </div>
-    `,
+  aioomMarketing: {
+    title: "AIOOM: an All-In-One Online Marketing Solution",
+    intro:
+      "I have conceptualized AIOOM, a multi-platform social media digital marketing SaaS designed to revolutionize how businesses manage their online presence. This idea is currently in its early design phase with a Figma prototype covering the home, posts, and metrics pages. The product aims to address core challenges in modern digital marketing.",
+    features: [
+      {
+        title: "Seamless Content Creation & Editing",
+        description:
+          "Craft and refine engaging content across YouTube, Facebook, Instagram, TikTok, LinkedIn, Twitter, and Pinterest from one intuitive interface.",
+      },
+      {
+        title: "Integrated Communication",
+        description:
+          "Centralize your social conversations, fostering real-time engagement and community building.",
+      },
+      {
+        title: "Actionable Metrics",
+        description:
+          "Gain comprehensive insights into your performance with unified analytics across all supported platforms.",
+      },
+    ],
+    conclusion:
+      "AIOOM represents my vision for a streamlined, powerful solution which translates complex market needs into a user-centric product concept and foundational design. The landing page built with Next.js and the Figma design are available.",
+    links: [
+      {
+        text: "landing page",
+        url: "https://www.aioom.tech/",
+      },
+      {
+        text: "Figma design",
+        url: "https://www.figma.com/proto/jhM6mCABFD21yYWAZAvdKi/Builder.io---Figma-to-HTML--React--and-more--Community-?node-id=892-4587&t=nca9JPnkI8IX2426-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=115%3A196",
+      },
+    ],
   },
 
   geographSaaS: {
     title: "Geograph: a Real Estate Listings Analytics SaaS Experiment",
-    description: `
-      <div class="space-y-6">
-        <p class="mb-4">
-          As a full-stack engineer, I built <strong>Geograph</strong>, a multi-tenant SaaS platform empowering organizations to transform raw property data into actionable intelligence. This experiment allows teams to securely log in, document crucial notes from multiple sources, and visualize their portfolio like never before.
-        </p>
-
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold mb-2">Key Features:</h3>
-          
-          <div class="space-y-3">
-            <div class="flex items-start" key="map-visualization">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Dynamic Map Visualization</strong>
-                <p class="mt-1">
-                  Explore properties on an interactive map with two intuitive sliders for adjusting cluster similarity and max cluster radius in real-time. The "Compute Property Clusters" feature instantly groups properties, displayed as circles, alongside key metrics: total clusters, total properties, and average property price.
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start" key="property-analytics">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Advanced Property Analytics</strong>
-                <p class="mt-1">
-                  Dive deeper into your data with the "Property Analytics" tab. View a detailed list of clusters and their contained properties. Each cluster features a comprehensive similarity analysis curve, breaking down price, size, location, and proximity-to-amenities similarity scores.
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start" key="navigation">
-              <span class="text-purple-400 mr-2">•</span>
-              <div>
-                <strong>Seamless Navigation</strong>
-                <p class="mt-1">
-                  Click any property within the analytics view to instantly center it on the map, displaying its price, size, and bedroom/bathroom count.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="mt-6">
-          Geograph shows my experience in developing complex, data-driven frontends, real-time map integrations, and user-centric data visualization for a robust SaaS environment.
-        </p>
-      </div>
-    `,
+    intro:
+      "As a full-stack engineer, I built Geograph, a multi-tenant SaaS platform empowering organizations to transform raw property data into actionable intelligence. This experiment allows teams to securely log in, document crucial notes from multiple sources, and visualize their portfolio like never before.",
+    features: [
+      {
+        title: "Dynamic Map Visualization",
+        description:
+          'Explore properties on an interactive map with two intuitive sliders for adjusting cluster similarity and max cluster radius in real-time. The "Compute Property Clusters" feature instantly groups properties, displayed as circles, alongside key metrics: total clusters, total properties, and average property price.',
+      },
+      {
+        title: "Advanced Property Analytics",
+        description:
+          'Dive deeper into your data with the "Property Analytics" tab. View a detailed list of clusters and their contained properties. Each cluster features a comprehensive similarity analysis curve, breaking down price, size, location, and proximity-to-amenities similarity scores.',
+      },
+      {
+        title: "Seamless Navigation",
+        description:
+          "Click any property within the analytics view to instantly center it on the map, displaying its price, size, and bedroom/bathroom count.",
+      },
+    ],
+    conclusion:
+      "Geograph shows my experience in developing complex, data-driven frontends, real-time map integrations, and user-centric data visualization for a robust SaaS environment.",
   },
 };
 
@@ -192,29 +144,111 @@ const projects = [
     id: 1,
     title: cardsContent.spotifyPlaylistGenerator.title,
     videoUrl: spotifyDemo,
-    description: cardsContent.spotifyPlaylistGenerator.description,
+    description: cardsContent.spotifyPlaylistGenerator,
   },
   {
     id: 2,
     title: cardsContent.agencyManagementMVP.title,
     videoUrl: fullStackRealEstateURL,
-    description: cardsContent.agencyManagementMVP.description,
-    figmaLink: "https://figma.com/example2",
+    description: cardsContent.agencyManagementMVP,
   },
   {
     id: 3,
     title: cardsContent.aioomMarketing.title,
-    description: cardsContent.aioomMarketing.description,
-    figmaLink: "https://figma.com/example3",
-    projectLink: "https://example.com/landing",
+    description: cardsContent.aioomMarketing,
   },
   {
     id: 4,
     title: cardsContent.geographSaaS.title,
     videoUrl: postgisSaasDemoURL,
-    description: cardsContent.geographSaaS.description,
+    description: cardsContent.geographSaaS,
   },
 ];
+
+const ProjectDescription = ({
+  description,
+}: {
+  description: ProjectDescription;
+}) => {
+  return (
+    <div className="space-y-6">
+      <p className="mb-4">{description.intro}</p>
+
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold mb-2">Key Features:</h3>
+        
+        <div className="space-y-3">
+          {description.features.map((feature, index) => (
+            <div key={index} className="flex items-start">
+              <span className="text-purple-400 mr-2">•</span>
+              <div>
+                <strong>{feature.title}</strong>
+                <p className="mt-1">{feature.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <p className="mt-6">
+        {description.conclusion.split(/(?=While the software|design. The)/).map((part, index) => {
+          if (index === 0) return part;
+          
+          if (description.links?.length === 2) {
+            const [firstLink, secondLink] = description.links;
+            return (
+              <span key={index}>
+                The{" "}
+                <a
+                  href={firstLink.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  {firstLink.text}
+                </a>{" "}
+                built with Next.js and the{" "}
+                <a
+                  href={secondLink.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  {secondLink.text}
+                </a>{" "}
+                are available.
+              </span>
+            );
+          }
+          
+          const link = description.links?.[0];
+          if (!link) return part;
+          
+          return (
+            <span key={index}>
+              {part.split(link.text).map((textPart, textIndex) => {
+                if (textIndex === 0) return textPart;
+                return (
+                  <span key={textIndex}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purple-400 hover:text-purple-300 transition-colors"
+                    >
+                      {link.text}
+                    </a>
+                    {textPart}
+                  </span>
+                );
+              })}
+            </span>
+          );
+        })}
+      </p>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
@@ -325,12 +359,7 @@ export default function Home() {
                   <>
                     <div className="video-description md:w-full md:p-8">
                       <h2 className="video-title">{project.title}</h2>
-                      <div
-                        className="video-text prose prose-invert max-w-none"
-                        dangerouslySetInnerHTML={{
-                          __html: project.description,
-                        }}
-                      />
+                      <ProjectDescription description={project.description} />
                     </div>
                     {project.videoUrl && (
                       <div className="md:w-full h-[400px] md:h-[600px] md:mb-24">
@@ -367,12 +396,7 @@ export default function Home() {
                       } md:p-8`}
                     >
                       <h2 className="video-title">{project.title}</h2>
-                      <div
-                        className="video-text prose prose-invert max-w-none"
-                        dangerouslySetInnerHTML={{
-                          __html: project.description,
-                        }}
-                      />
+                      <ProjectDescription description={project.description} />
                     </div>
                   </>
                 )}
