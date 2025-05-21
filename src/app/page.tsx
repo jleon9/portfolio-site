@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import NextVideo from "next-video";
-// @ts-ignore
+// @ts-expect-error: Mux embedded video imports
 import spotifyDemo from "../../videos/spotify-generator-demo.mov?thumbnailTime=24";
-// @ts-ignore
+// @ts-expect-error: Mux embedded video imports
 import fullStackRealEstateURL from "../../videos/cegex-full-stack.mov?thumbnailTime=0";
-// @ts-ignore
+// @ts-expect-error: Mux embedded video imports
 import postgisSaasDemoURL from "../../videos/postgis-saas.mp4?thumbnailTime=74";
 
 const cardsContent = {
@@ -270,7 +270,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="hidden md:flex md:flex-col md:items-center"
+              className="hidden md:flex md:flex-col md:items-center relative z-10"
             >
               <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-purple-400/30">
                 <Image
@@ -285,7 +285,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-2xl text-center font-outfit font-semibold text-white mt-4"
+                className="text-2xl text-center font-outfit font-semibold text-white mt-4 relative z-10"
               >
                 Jean-François
                 <br />
