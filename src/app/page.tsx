@@ -35,7 +35,7 @@ const cardsContent = {
           <h3 class="text-xl font-semibold mb-2">Key Features:</h3>
           
           <div class="space-y-3">
-            <div class="flex items-start">
+            <div class="flex items-start" key="content-creation">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Seamless Content Creation & Editing</strong>
@@ -45,7 +45,7 @@ const cardsContent = {
               </div>
             </div>
 
-            <div class="flex items-start">
+            <div class="flex items-start" key="communication">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Integrated Communication</strong>
@@ -55,7 +55,7 @@ const cardsContent = {
               </div>
             </div>
 
-            <div class="flex items-start">
+            <div class="flex items-start" key="metrics">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Actionable Metrics</strong>
@@ -86,7 +86,7 @@ const cardsContent = {
           <h3 class="text-xl font-semibold mb-2">Key Features:</h3>
           
           <div class="space-y-3">
-            <div class="flex items-start">
+            <div class="flex items-start" key="menu">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Intuitive Menu</strong>
@@ -96,7 +96,7 @@ const cardsContent = {
               </div>
             </div>
 
-            <div class="flex items-start">
+            <div class="flex items-start" key="contact-management">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Comprehensive Contact Management</strong>
@@ -106,7 +106,7 @@ const cardsContent = {
               </div>
             </div>
 
-            <div class="flex items-start">
+            <div class="flex items-start" key="property-management">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Property Portfolio Management</strong>
@@ -116,7 +116,7 @@ const cardsContent = {
               </div>
             </div>
 
-            <div class="flex items-start">
+            <div class="flex items-start" key="data-control">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Streamlined Data Control</strong>
@@ -147,7 +147,7 @@ const cardsContent = {
           <h3 class="text-xl font-semibold mb-2">Key Features:</h3>
           
           <div class="space-y-3">
-            <div class="flex items-start">
+            <div class="flex items-start" key="map-visualization">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Dynamic Map Visualization</strong>
@@ -157,7 +157,7 @@ const cardsContent = {
               </div>
             </div>
 
-            <div class="flex items-start">
+            <div class="flex items-start" key="property-analytics">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Advanced Property Analytics</strong>
@@ -167,7 +167,7 @@ const cardsContent = {
               </div>
             </div>
 
-            <div class="flex items-start">
+            <div class="flex items-start" key="navigation">
               <span class="text-purple-400 mr-2">•</span>
               <div>
                 <strong>Seamless Navigation</strong>
@@ -220,7 +220,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Banner Section */}
-      <div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
+      <div className="relative h-[70vh] min-h-[600px] w-full overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -243,7 +243,7 @@ export default function Home() {
           >
             Creative Portfolio
           </motion.h1>
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between relative">
             <div className="flex-1">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -270,7 +270,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="hidden md:flex md:flex-col md:items-center relative z-10"
+              className="hidden md:flex md:flex-col md:items-center"
             >
               <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-purple-400/30">
                 <Image
@@ -281,16 +281,18 @@ export default function Home() {
                   priority
                 />
               </div>
-              <motion.h3
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-2xl text-center font-outfit font-semibold text-white mt-4 relative z-10"
+                className="mt-4 px-6 py-2 rounded-lg bg-black/40 backdrop-blur-sm"
               >
-                Jean-François
-                <br />
-                Léon
-              </motion.h3>
+                <h3 className="text-2xl text-center font-outfit font-semibold text-white">
+                  Jean-François
+                  <br />
+                  Léon
+                </h3>
+              </motion.div>
             </motion.div>
           </div>
         </div>
